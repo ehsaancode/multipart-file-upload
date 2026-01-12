@@ -1,0 +1,16 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+h2 {
+  margin-top: 0;
+}
