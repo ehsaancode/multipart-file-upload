@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
@@ -7,7 +9,7 @@
 body {
   margin: 0;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f8fafc;
   color: #333;
 }
 

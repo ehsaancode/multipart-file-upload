@@ -46,6 +46,7 @@ export const uploadFile = async (file, onProgress) => {
             if (!url) {
                 throw new Error(`Failed to get upload URL for part ${partNumber}`);
             }
+            console.log("step 2", urlResponse)
 
             // 3. Upload the chunk
             const chunkResponse = await axios.put(url, chunk, {
@@ -59,6 +60,8 @@ export const uploadFile = async (file, onProgress) => {
                     onProgress(percentCompleted);
                 }
             });
+
+            console.log("step 3", chunkResponse)
 
             // Capture ETag from headers
             const eTag = chunkResponse.headers['etag'];
@@ -77,12 +80,13 @@ export const uploadFile = async (file, onProgress) => {
             uploadId,
             parts: uploadedParts
         }, config);
-
+        
+        console.log("step 4",completeResponse )
         return completeResponse.data;
 
     } catch (error) {
         console.error('Upload failed:', error);
-
+        
         throw error;
     }
 };
